@@ -1,41 +1,26 @@
-
-
 <?php
+
+/* mostrar la tabla del 2 hasta 2x10  */
 /* 
- 4. EJERCICIO
-Hacer un programa en php que muestre el texto contenido en las variables llamadas nombre y edad. Si
-nombre es NULL mostrara Hola desconocido, Si se declara un nombre X y edad es NULL mostrara Hola X,
-No se tu edad Si se declara un nombre X y edad es Y mostrara Hola X, Tiene Y anos.
+$table2 = 2;
+echo "Tabla del 2 \n***********\n";
+for ($i = 1; $i <= 10; $i++) {
+    $result = $table2 * $i;
+
+    echo " 2 X $i = $result" . "\n";
+}
+echo ".......";
 
  */
 
 
-/* $nombre = 'David';
-$edad = 100;
-
-if ($nombre == null) {
-echo 'Hola desconocido';
+function table($number) {
+    echo "Tabla del $number \n***********\n";
+    for ($i = 1; $i <= 10; $i++) {
+        $result = $number * $i;
+        echo " $number X $i = $result" . "\n";
+    }
+    echo ".......\n";
 }
-elseif ($nombre != null && $edad == null ){
-    echo 'Hola'. $nombre.' no se tu edad';
-    
-}
-elseif ($nombre != null && $edad != null) {
-    echo 'Hola '.$nombre.' tienes '.$edad.' años';
-} */
-    
 
-$nombre = 'David';
-$edad = 100;
-
-switch (true) {
-    case ($nombre == null):
-        echo 'Hola desconocido';
-        break;
-    case ($nombre != null && $edad == null):
-        echo 'Hola '. $nombre .', no se tu edad';
-        break;
-    case  ($nombre != null && $edad != null):
-        echo 'Hola '.$nombre.', tienes '.$edad.' años';
-}
-?>
+table(2);

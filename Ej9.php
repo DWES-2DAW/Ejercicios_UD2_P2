@@ -1,45 +1,37 @@
-<!-- 
-/* 
-9. EJERCICIO
-Crear una pagina que calcule el importe final de una factura. Debemos crear dos variables que contendran el
-precio de un producto y las unidades adquiridas. Ademas, crear una constante llamada IVA del 21%.
-Debemos calcular y devolver el precio del producto, las unidades adquiridas, el importe base de la factura, el
-importe del IVA y el importe final de la factura */ -->
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Calculadora de Factura</title>
-</head>
-<body>
-    <form action="" method="post">
-        <label for="price">Precio del Producto:</label><br>
-        <input type="number" id="productPrice" name="price" required><br>
-        <label for="units">Unidades Adquiridas:</label><br>
-        <input type="number" id="units" name="units" required><br>
-        <input type="submit" value="Calcular Factura">
-    </form>
-    <p>-----------------------</p>
-</body>
-</html>
-
-
 <?php
 
-define ("IVA",0.21);
+/* 9.EJERCICIO 9
+Una empresa necesita una página para gestionar las facturas. En cada factura figura: el código
+del artículo, la cantidad vendida en litros y el precio por litro. Se pide introducir en un array
+multidimensional 5 facturas introducidas e indicar la Facturación total, cantidad en litros
+vendidos del artículo 1 y cuantas facturas se emitieron de más de 600 €. */
 
-$price = $_POST['price'];
-$units = $_POST['units'];
 
+$facturas = [
+    ['codigo' => 1, 'litros' => 100, 'precio' => 5],
+    ['codigo' => 2, 'litros' => 200, 'precio' => 4],
+    ['codigo' => 1, 'litros' => 150, 'precio' => 5],
+    ['codigo' => 3, 'litros' => 300, 'precio' => 3],
+    ['codigo' => 1, 'litros' => 100, 'precio' => 5]
+];
 
-$amount = $price * $units;
+$totalFacturacion = 0;
+$totalLitrosArticulo1 = 0;
+$facturasMas600 = 0;
 
-$amountIva = $amount * IVA;
-$totalBill = $amount + $amountIva;
+foreach ($facturas as $factura) {
+    $totalFactura = $factura['litros'] * $factura['precio'];
+    $totalFacturacion += $totalFactura;
 
-echo "Precio del Producto: " . $price . "<br>";
-echo "Unidades Adquiridas: " . $units . "<br>";
-echo "Importe Base de la Factura: " . $amount . "<br>";
-echo "Importe del IVA: " . $amountIva . "<br>";
-echo "Importe Final de la Factura: " . $totalBill;
-?>
+    if ($factura['codigo'] == 1) {
+        $totalLitrosArticulo1 += $factura['litros'];
+    }
+
+    if ($totalFactura > 600) {
+        $facturasMas600++;
+    }
+}
+
+echo "La facturación total es: $totalFacturacion \n";
+echo "Cantidad en litros vendidos del artículo 1: $totalLitrosArticulo1 \n";
+echo "Cantidad de facturas de más de 600 €: $facturasMas600 \n";

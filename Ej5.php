@@ -1,18 +1,40 @@
 <?php
 
-/* 5. EJERCICIO
-Hacer un programa en php que calcule el mayor de dos numeros almacenados en dos variables usando el
-condicional if. */
+/* 5. EJERCICIO 5
+Leer un array de números y mostrar si es positivo o negativo hasta que se encuentre un 0. */
 
-$num1 = 12;
-$num2 = 95;
-/* 
-if ($num1 > $num2) {
-    echo $num1 . ' es mayor que ' . $num2;
-} elseif ($num2 > $num1) {
-    echo $num2 . ' es mayor que ' . $num1;
-} else {
-    echo $num1 . ' y ' . $num2 . ' son iguales';
+ $numbers = [];
+for ($i = 0; $i < 20; $i++) {
+    $numbers[] = random_int(-100, 100);
+} 
+
+foreach ($numbers as $number) {
+    if ($number == 0) {
+        echo "Zero found! Stopping...\n";
+    } elseif ($number > 0) {
+        echo "$number is positive.\n";
+    } else {
+        echo "$number is negative.\n";
+    }
 }
- */
-echo $num1 > $num2 ? $num1 . ' es mayor que ' . $num2 : ($num2 > $num1 ? $num2 . ' es mayor que ' . $num1 : $num1 . ' y ' . $num2 . ' son iguales');
+ 
+
+/* $numbers = [];
+for ($i = 0; $i < 10; $i++) {
+    $numbers[] = random_int(-12, 12);
+} 
+
+$i = 0;
+$zero= false;
+while ($i < count($numbers) && !$zero) {
+    if ($numbers[$i] == 0) {
+        echo "Zero found! Stopping...\n";
+        $zero= true;
+    } else if ($numbers[$i] > 0) {
+        echo "$numbers[$i] is positive.\n";
+    } else {
+        echo "$numbers[$i] is negative.\n";
+    }
+    $i++;
+}
+  */

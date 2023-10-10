@@ -1,22 +1,33 @@
+
 <?php
 
-/* 6. EJERCICIO
-Crear un archivo php que, dados dos numeros almacenados en dos variables, nos muestre por pantalla el mayor
-de ellos o la frase "Los numeros son iguales" si son iguales. Usar la estructura switch y el operador nave
-espacial. */
+/* EJERCICIO 6 Leer un array de números y mostrar la media de todos los números introducidos hasta que se
+encuentre un número negativo */
 
 
-$num1 = 41;
-$num2 = 23;
+$sumMed = 0;
 
-switch ($num1 <=> $num2) {
-    case -1:
-        echo "El número mayor es " . $num2;
-        break;
-    case 0:
-        echo "Los números son iguales";
-        break;
-    case 1:
-        echo "El número mayor es " . $num1;
-        break;
+do {
+    $num = [];
+    for ($i = 0; $i < 20; $i++) {
+        $num[] = random_int(-30, +30);
+    }
+    
+    //var_dump($num);
+
+    $numSum = array_sum($num);
+
+    $numTotal = count($num);
+
+    $sumMed = $numSum / $numTotal;
+   echo "Valoramos el número $sumMed\n------------\n";
+    if ($sumMed >= 0) {
+        echo 'El numero ' . $sumMed . ' es positivo'."\n------------\n";
+    }
+} while ($sumMed >= 0);
+
+if ($sumMed < 0) {
+    echo 'El numero ' . $sumMed . ' es negativo';
 }
+
+

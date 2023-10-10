@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Mi Página</title>
-</head>
-<body>
+<?php
+/* 
+3.EJERCICIO 3
+Programa que muestre por pantalla los 5 primeros números pares. */
 
-<?php 
-$titulo = "Bienvenido a mi página"; // Define la variable
+$counter = 0;
+for ($i = 0; $i < 100; $i++) {
 
+  if ($i % 2 == 0 && $counter < 5) {
+    $counter++;
 
-/* <?= echo htmlspecialchars($titulo); ?> */  // con función especial caracteres 
-?>
-
-<h1><?= $titulo ?></h1> <!-- Imprime la variable dentro de la etiqueta h1 -->
-
-</body>
-</html>
-
-<!-- ?php 
-$titulo = "Bienvenido a mi página"; // Define la variable
-?>
+    echo $i . "\n";
+  }
+}
