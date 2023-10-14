@@ -13,4 +13,4 @@
     al intentar mostrar el listado de hoteles
     • Añadir los siguientes hoteles al array y mostrar el listado */
 
-    echo "<h1> E 10 </h1>";
+    echo "<h1>  10 </h1>";
