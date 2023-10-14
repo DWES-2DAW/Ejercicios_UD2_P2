@@ -12,3 +12,5 @@
     • Borrar todos los hoteles y mostrar un mensaje “No hay hoteles en la base de datos”,
     al intentar mostrar el listado de hoteles
     • Añadir los siguientes hoteles al array y mostrar el listado */
+
+    echo "<h1> Ejercicio 10 </h1>";
