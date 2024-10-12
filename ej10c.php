@@ -1,6 +1,5 @@
 <?php 
 
-// Inicialización del array de hoteles ( array de Guillermo)
 $hoteles = array(
     array('Nombre' => 'Abashiri NH', 'Cat' => '3*', 'Hab' => 168, 'Poblacion' => '46013 Valencia', 'Direccion' => 'Avenida Ausias March, 59'),
     array('Nombre' => 'Abba Acteon (Abba Hoteles) NH', 'Cat' => '4*', 'Hab' => 189, 'Poblacion' => '46023 Valencia', 'Direccion' => 'Escultor Vicente Beltrán Grimal, 2'),
